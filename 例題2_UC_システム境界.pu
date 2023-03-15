@@ -1,0 +1,13 @@
+@startuml ユースケース図
+    skinparam actorStyle awesome
+    ' left to right direction
+    actor 利用者 #APPLICATION/CornflowerBlue;line:LightSlateGray;line.bold;
+
+    package 携帯システム {
+        usecase 連絡先を登録する
+        usecase 電話をかける
+    }
+    利用者 -down-> 連絡先を登録する
+    利用者 -down-> 電話をかける
+    ' "-"の間にup・down・left・right を入れることで矢印の方向を変更できる
+@enduml
