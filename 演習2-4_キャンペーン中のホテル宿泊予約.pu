@@ -1,0 +1,12 @@
+@startuml 演習2-4
+    actor 利用者
+    rectangle ホテル宿泊予約 {
+        usecase 予約
+        usecase ログイン
+        usecase (<u>キャンペーン価格で予約</u>\n)
+    }
+
+    利用者-->予約
+    予約 .> ログイン : <<include>>
+
+@enduml
