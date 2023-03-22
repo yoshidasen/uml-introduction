@@ -1,0 +1,12 @@
+@startuml 演習2-3
+    left to right direction
+    actor 利用者
+
+    rectangle ホテル宿泊予約 {
+        usecase 予約
+        usecase ログイン
+    }
+
+    利用者-->予約
+    予約 .> ログイン : <<include>>
+@enduml
