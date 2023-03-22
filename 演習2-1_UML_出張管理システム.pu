@@ -1,4 +1,4 @@
-@startuml
+@startuml 演習2-1_UM_出張管理システム
     left to right direction
     actor 申請者 #DDDDDD;line:black;line.bold;
     actor 承認者 #DDDDDD;line:black;line.bold;
