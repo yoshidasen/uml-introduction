@@ -1,0 +1,26 @@
+@startuml
+    left to right direction
+    actor 申請者 #DDDDDD;line:black;line.bold;
+    actor 承認者 #DDDDDD;line:black;line.bold;
+    actor 経理担当者 #DDDDDD;line:black;line.bold;
+    actor 交通費精算システム #DDDDDD;line:black;line.bold;
+
+    rectangle 出張申請システム {
+        usecase 出張申請を登録する as register
+        usecase 出張申請を提出する as issue
+        usecase 出張申請を承認する as approval
+        usecase 出張申請を却下する as rejected
+        usecase 出張申請を差し戻す as back
+        usecase 出張申請を確認する as check
+    }
+
+    申請者--> register
+    申請者--> issue
+    承認者--> approval
+    承認者--> rejected
+    承認者--> back
+    承認者--> check
+    経理担当者--> check
+    register <-- 交通費精算システム
+
+@enduml
