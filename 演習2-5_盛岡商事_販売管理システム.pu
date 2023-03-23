@@ -1,0 +1,13 @@
+@startuml 販売管理システム
+    left to right direction
+    actor 販売部 as A1
+
+    rectangle 販売管理システム {
+        usecase 注文商品の確認 as U1
+        usecase 商品の出荷状況の登録 as U2
+    }
+
+    A1 --> U1
+    A1 --> U2
+
+@enduml
