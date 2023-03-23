@@ -5,26 +5,22 @@
     actor ホテル管理者 as A3
 
     rectangle ホテル予約システム {
-        usecase 空室状況を閲覧する
-        usecase 部屋を予約する
-        usecase 空室状況を入力する
-        usecase 予約の集計をする
-        usecase ログイン
+        usecase 空室状況を閲覧する as U1
+        usecase 空室状況を入力する as U2
+        usecase 予約の集計をする as U3
+        usecase (<u>部屋を予約する</u>\n拡張点\nキャンペーン期間) as U4
+        usecase ログインする as U5
+        usecase 会員登録をする as U6
     }
 
-
-
+    A1 --> U1
+    A1 --> U4
+    A2 --> U2
+    A3 --> U3
+    U2 ..> U5 : <<include>>
+    U3 ..> U5 : <<include>>
+    U4 ..> U5 : <<include>>
+    A1 ---> U6
+    U5 <.. U6 : <<!include>>
 
 @enduml
-
-    left to right direction
-    actor 利用者
-    rectangle ホテル宿泊予約 {
-        usecase キャンペーン
-        usecase (<u>予約</u>\n拡張点\nキャンペーン期間) as U
-        usecase ログイン
-    }
-
-    利用者 -down-> U 
-    キャンペーン ..> U : <<extend>>
-    U ..> ログイン : <<include>>
