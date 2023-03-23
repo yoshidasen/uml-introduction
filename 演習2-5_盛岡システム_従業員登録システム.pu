@@ -1,0 +1,13 @@
+@startuml 従業員登録システム
+    left to right direction
+    actor 人事担当者 as A1
+    actor 社員 as A2
+
+    rectangle 従業員システム {
+        usecase 社員情報の登録 as U1
+        usecase 社員情報の参照 as U2
+    }
+
+    A1 --> U1
+
+@enduml
