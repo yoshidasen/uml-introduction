@@ -3,8 +3,8 @@
     actor 出荷担当者 as A1
 
     rectangle 販売管理システム {
-        usecase 注文商品の確認 as U1
-        usecase 商品の出荷状況の登録 as U2
+        usecase 注文商品の確認をする as U1
+        usecase 商品の出荷状況の登録をする as U2
     }
 
     A1 --> U1
