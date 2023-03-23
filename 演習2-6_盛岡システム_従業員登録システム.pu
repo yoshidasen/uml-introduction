@@ -4,12 +4,15 @@
     actor 社員 as A2
 
     rectangle 従業員システム {
-        usecase 社員情報の登録 as U1
-        usecase 社員情報の参照 as U2
+        usecase 社員情報の登録をする as U1
+        usecase 社員情報の参照をする as U2
+        usecase 社員情報の変更をする as U3
     }
 
     A1 --> U1
     A2 --> U2
+    A2 --> A1 : <<変更届を提出する>>
+    A1 --> U3
     
 
 @enduml
