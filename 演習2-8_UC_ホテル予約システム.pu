@@ -1,26 +1,37 @@
 @startuml ホテル予約システム
     left to right direction
     actor 利用者 as A1
-    actor ホテル従業員 as A2
-    actor ホテル管理者 as A3
+    actor ホテル管理者 as A2
+    actor ホテル従業員 as A3
 
     rectangle ホテル予約システム {
         usecase 空室状況を閲覧する as U1
         usecase 空室状況を入力する as U2
         usecase 予約の集計をする as U3
-        usecase (<u>部屋を予約する</u>\n拡張点\nキャンペーン期間) as U4
+        usecase (<u>部屋を予約する</u>\n拡張点\nキャンペーン期間\n会員登録) as U4
         usecase ログインする as U5
         usecase 会員登録をする as U6
+        usecase キャンペーン as U7
     }
 
     A1 --> U1
-    A1 --> U4
-    A2 --> U2
-    A3 --> U3
+    A1 --> U6
+    A3 <|-- A2
+    A2 --> U3
+    A3 --> U2
+    U6 ..> U4 : <<include>>
+    U7 ..> U4 : <<include>>
     U2 ..> U5 : <<include>>
     U3 ..> U5 : <<include>>
     U4 ..> U5 : <<include>>
-    A1 ---> U6
-    U5 <.. U6 : <<!include>>
+
+
+    ' A1 --> U4
+    ' A3 --> U2
+    ' A2 --> U3
+    ' U2 ..> U5 : <<include>>
+    ' U3 ..> U5 : <<include>>
+    ' U4 ..> U5 : <<include>>
+    ' A1 ---> U6
 
 @enduml
