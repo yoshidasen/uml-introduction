@@ -1,7 +1,6 @@
 @startuml class
-    ' 可視性をアイコンにしないオプション
+    ' ↓可視性をアイコンにしないオプション
     skinparam classAttributeIconSize 0
-    
     ' class A <<stereotype>> {}
 
     ' class B {
@@ -36,4 +35,7 @@
         + setDept(dept:Stirng) : void
         + getDept() : String
     }
+
+    ' ↓丸Cが消える
+    hide Employee circle
 @enduml
