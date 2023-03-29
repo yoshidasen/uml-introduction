@@ -1,0 +1,41 @@
+@startuml 診察記録
+' 医師は患者を診察します。医師は診察のつどに、患者の診察記録を作成します。
+' 患者には担当医が1人決まっていて、担当医以外が診察することはありません。
+' 医師は１つの医局（外科、内科、小児科など）に所属しています。
+' ※多重度、関連名、関連端名なども反映してください。
+    left to right direction
+    class 患者 {
+        - id : int
+        - name : String
+        -docter_id : int
+    }  
+
+    class 医師 {
+        - id : int
+        - name : String
+        - affiliation 
+    }
+
+    class 診察記録 {
+        - id : int
+        - patient : int
+        - docter : int
+        - day : Date
+    }
+
+    class 医局 {
+        - id : int
+        - name : String
+    }
+
+    医師 "1" -- "*" 患者
+    医師 "1" -- "*" 診察記録
+    患者 "1" -- "*" 診察記録
+    医局 "1" <-- "*" 医師:所属 <
+
+    ' 医師
+    ' 診察記録
+    ' 医局
+
+
+@enduml
