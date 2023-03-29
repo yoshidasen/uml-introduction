@@ -1,4 +1,3 @@
-' 車にはタイヤが４本装着されている。車クラスとタイヤクラスの関係を①オブジェクト図と②クラス図で表現しなさい。
 @startuml 車
     left to right direction
     class "車" as C1 {
