@@ -1,0 +1,12 @@
+@startuml 雇用形態
+    rectangle 雇用形態 {
+        usecase 従業員 as U1
+        usecase 派遣 as U2
+        usecase 契約社員 as U3
+        usecase 正社員 as U4
+    }
+
+    U1 <|-- U2
+    U1 <|-- U3
+    U1 <|-- U4
+@enduml
