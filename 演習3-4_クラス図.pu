@@ -2,13 +2,13 @@
 @startuml 車
     left to right direction
     class "車" as C1 {
-        車体識別番号
-        車種
+        - 車体識別番号:int
+        - 車種:String
     }
     class "タイヤリスト" as C2 {
-        タイヤ識別番号
-        車体識別番号
-        種類
+        - タイヤ識別番号:int
+        - 車体識別番号:int
+        - 種類:String
     }
 
     C1 "1" *-- "4" C2 
