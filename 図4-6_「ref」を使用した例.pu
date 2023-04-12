@@ -14,7 +14,7 @@
     skinparam sequenceReferenceBorderColor yellow
     ' refの背景色
     skinparam sequenceReferenceBackgroundColor white
-    ' skinparam sequenceReferenceHeaderBackgroundColor lightblue
+    skinparam sequenceReferenceHeaderBackgroundColor lightblue
     
     mainframe sd ログイン
     
