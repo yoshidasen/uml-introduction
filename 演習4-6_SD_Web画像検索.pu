@@ -6,19 +6,20 @@
     participant ":画像サーバー" as images
 
     activate user
-        user -> blouser : 閲覧画面情報(リンク)
+        user -> blouser : 画像のリンクボタンを押す
         activate blouser
-            blouser -> web: 閲覧画像情報(画像ファイル名)
+            blouser -> web: 画像ファイル名を渡す
             activate web
-                web -> images : 画像検索(画像ファイル名)
+                web -> images : 画像ファイル名を探す命令を渡す
                 activate images
-                    images -> images : 画像検索(画像ファイル名)
+                    images -> images : 画像ファイルを探す
                     activate images
                     deactivate images
-                    web <-- images : 画像変換(画像ファイル)
+                    web <-- images : 画像ファイル
                 deactivate images
-                blouser <-- web : 画像再生(変換済み画像ファイル)
+                blouser <-- web : HTMLと画像ファイル
             deactivate web
+            user <<-- blouser : 画像の閲覧
         deactivate blouser
     deactivate user
 @enduml
