@@ -1,0 +1,35 @@
+@startuml
+    hide footbox
+    actor ":会員" as member
+
+    participant ":商品検索画面" as boundary <<boundary>>
+    participant ":商品検索コントローラ" as control <<control>>
+    participant ":商品" as entity1 <<entity>>
+    participant ":商品カテゴリ" as entity2 <<entity>>
+
+    activate member
+        member -> boundary : 商品検索(商品番号)
+        activate boundary
+            boundary -> control : 商品検索(商品番号)
+            activate control
+                create entity1
+                control -->> entity1 : <<create>>生成()
+                
+                loop 商品カテゴリ数
+                    create entity2
+                    control -->> entity2 : <<create>>生成()
+                    activate entity1
+                        control -> entity1 : 商品カテゴリ設定()
+                    deactivate entity1
+                end loop
+                
+                boundary <<-- control : 商品情報
+            deactivate control
+            boundary -> boundary : 検索情報表示(商品情報)
+            activate boundary
+            deactivate boundary
+        deactivate boundary
+    deactivate member
+            
+
+@enduml
