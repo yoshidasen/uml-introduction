@@ -1,0 +1,25 @@
+@startuml
+    hide footbox
+    Actor ":客" as guest
+
+    participant ":フロア店員" as boundary
+    participant ":料理人" as control
+
+    mainframe sd ラーメン屋さん
+
+    activate guest
+        guest -> boundary : ラーメンを注文する
+        activate boundary 
+
+        boundary -> control : 料理を指示する    
+        
+        activate control
+
+            control ->  control : 調理をする
+
+            boundary <-- control : ラーメン
+            guest <-- boundary : ラーメン
+        deactivate boundary
+    deactivate guest
+
+@enduml
