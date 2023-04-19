@@ -3,5 +3,5 @@
     actor 経営者 #DDDDDD;line:black;line.bold;
     actor ホテル従業員 #DDDDDD;line:black;line.bold;
 
-    ホテル従業員<|-[dashed]-経営者
+    ホテル従業員<|-- 経営者
 @enduml
