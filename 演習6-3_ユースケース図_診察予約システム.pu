@@ -1,0 +1,26 @@
+@startuml 診察予約システム
+    left to right direction
+
+    actor 利用者 as user
+    actor 看護師 as nurse
+
+    rectangle 診察予約システム {
+        usecase 予約する as U1
+        usecase 予約を確認する as U2
+        usecase 予約を取り消す as U3
+        usecase 順番を確認する as U4
+        usecase 今の順番を確認する as U5
+        usecase 今の順番を更新する as N1
+    }
+
+    user --> U1
+    user --> U2
+    U2 --> U1 : <<include>>
+    user --> U3
+    U3 --> U1 : <<include>>
+    user --> U4
+    U4 --> U1  : <<include>>
+    user --> U5
+    nurse --> N1
+
+@enduml
