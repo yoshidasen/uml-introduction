@@ -15,11 +15,11 @@
 
     user --> U1
     user --> U2
-    U2 --> U1 : <<include>>
+    ' U2 --> U1 : <<include>>
     user --> U3
-    U3 --> U1 : <<include>>
+    ' U3 --> U1 : <<include>>
     user --> U4
-    U4 --> U1  : <<include>>
+    ' U4 --> U1  : <<include>>
     user --> U5
     nurse --> N1
 
