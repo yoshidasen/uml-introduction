@@ -1,0 +1,24 @@
+@startuml 自動販売機
+hide footbox
+actor 客 as user
+
+participant ":料金装置" as money
+participant ":ボタン" as buttom
+participant ":ベンダー装置" as bender
+
+mainframe sd 自動販売機
+
+
+user -> money : 1:硬貨を入れる
+activate money
+    money -> buttom : 2:ボタンを押す
+    activate buttom
+        buttom -> bender : 3:商品を指定
+    deactivate buttom
+        activate bender
+            money <- bender : 4商品を排出
+        deactivate bender
+    user <- money : 5:商品を受け取る
+deactivate money
+
+@enduml
