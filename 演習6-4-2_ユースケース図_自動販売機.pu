@@ -1,0 +1,15 @@
+@startuml 自動販売機
+    left to right direction
+    actor 客 as user
+    actor ベンダー as b   
+
+    rectangle 自動販売機 {
+        usecase 飲み物を購入する as U1
+        usecase 在庫を追加する as U2
+        usecase 代金を回収する as U3
+    }
+
+    user --> U1
+    b --> U2
+    b --> U3
+@enduml
