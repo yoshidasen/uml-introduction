@@ -1,0 +1,23 @@
+@startuml ライントレーサー
+    left to right direction
+    class "ライントレーサー" as C1{
+    }
+    class "光センサー" as C2{
+    }
+    class "右モータ" as C3{
+    }
+    class "左モータ" as C4{
+    }
+    class "CPU" as C5{
+    }
+    class "電源SW" as C6{
+    }
+
+    C1 "1"--"1" C2
+    C1 "1"--"1" C3
+    C1 "1"--"1" C4
+    C1 "1"--"1" C5
+    C1 "1"--"1" C6
+
+
+@enduml
