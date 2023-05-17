@@ -5,22 +5,16 @@
     actor 看護師 as nurse
 
     rectangle 診察予約システム {
-        usecase 予約する as U1
-        usecase 予約を確認する as U2
-        usecase 予約を取り消す as U3
-        usecase 順番を確認する as U4
-        usecase 今の順番を確認する as U5
-        usecase 今の順番を更新する as N1
+        usecase メニュー as U1
+        usecase 予約と確認 as U2
+        usecase あなたの順番 as U3
+        usecase 今の順番 as U4
     }
 
     user --> U1
     user --> U2
-    ' U2 --> U1 : <<include>>
     user --> U3
-    ' U3 --> U1 : <<include>>
     user --> U4
-    ' U4 --> U1  : <<include>>
-    user --> U5
-    nurse --> N1
+    U4 <-- nurse
 
 @enduml
