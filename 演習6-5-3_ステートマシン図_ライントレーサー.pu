@@ -1,0 +1,10 @@
+@startuml ライントレーサー
+    left to right direction
+    電源SW_OFF --> 電源SW_ON : 電源SWを入れる
+    state 電源SW_ON{
+        右旋回 --> 左旋回 : 光センサーがラインを外れる[明るい]
+        左旋回 --> 右旋回 : 光センサーがライン上にある[暗い]
+    }
+    電源SW_OFF <-- 電源SW_ON : 電源SWを切る
+    
+@enduml
