@@ -1,0 +1,14 @@
+@startuml ライントレーサー
+    left to right direction
+    actor ユーザー as user 
+    actor 光センサー as sensor
+    actor 左右モーター as motor
+
+    rectangle ライントレーサー{
+        usecase 線に沿って走行する as U1 
+    }
+
+    user -- U1
+    U1 -- sensor
+    U1 -- motor
+@enduml
