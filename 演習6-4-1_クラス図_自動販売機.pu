@@ -1,6 +1,3 @@
-' 「自動販売機」「ボタン」「料金装置」「ベンダー装置」をクラスとして、クラス図を作成してくだ
-' さい。
-
 @startuml 自動販売機
     left to right direction
     class "自動販売機" as C1 {
