@@ -1,0 +1,52 @@
+@startuml ハンバーガーショップ
+    class "注文" as a {
+        合計
+    }
+    class "注文詳細" as b {
+        数量
+        小計
+    }
+    class "割引クーポン" as c {
+        値引き額
+        期限
+    }
+    class "商品" as d {
+        名称
+        単価
+    }
+    class "カップ" as e {
+        サイズ
+    }
+    class "ドリンク" as f {
+        種別
+    }
+    class "フード" as g {}
+    class "レシピ" as h {}
+    class "材料" as i {}
+    class "ハンバーガー" as j {
+        種別
+    }
+    class "ポテト" as k {
+        サイズ
+    }
+    class "パン" as bre {}
+    class "肉" as meet {}
+    class "野菜" as veg {}
+    class "チーズ" as che {}
+
+    a "1..*" o-ri- b
+    b "0..*" -ri- "0..1" c
+    b "0..*" -down- "1" d
+    e "1..3" -ri- "0..*" f
+    f -ri-|> d
+    d <|-- g
+    g "1"-ri-"1" h
+    g <|-- k
+    g <|-- j
+    i "1..*" -ri-o "1..*" j
+    i <|-- bre
+    i <|-- meet
+    i <|-- veg
+    i <|-- che
+
+@enduml
