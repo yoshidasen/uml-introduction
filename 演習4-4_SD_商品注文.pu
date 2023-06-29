@@ -1,6 +1,6 @@
 @startuml
     hide footbox
-    actor ":受注係" as A1
+    actor ":受注者" as A1
     participant ":注文登録画面" as boundary <<boundary>>
     participant ":商品" as entity1 <<entity>>
     participant ":注文" as entity2 <<entity>>
