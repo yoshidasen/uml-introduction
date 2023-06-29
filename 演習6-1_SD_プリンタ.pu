@@ -1,13 +1,12 @@
 @startuml プリンタ
-    left to right direction
+    ' left to right direction
 
-    [*] --> 待機中
+    [*] -right-> 待機中 : 電源ON
+    待機中 -right-> [*] : 電源OFF
 
-    state c <<choice>>
+    待機中 --> 印刷中 : 印刷
+    待機中 <-- 印刷中 : 印刷完了
+    印刷中 --> 用紙無し : 用紙切れ
+    印刷中 <-- 用紙無し : 用紙補充
 
-    待機中 --> 印刷中 : 待機完了
-    印刷中 --> c
-    c --> [*] : 印刷完了
-    c --> 用紙無し : コピー用紙なし
-    用紙無し --> [*] : 印刷終了
 @enduml
